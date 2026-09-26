@@ -1,4 +1,4 @@
-package main
+package outlook
 
 import (
 	"log/slog"
