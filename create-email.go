@@ -143,11 +143,11 @@ func CreateEmail(config *EmailConfig) error {
 
 	/*** SEND EMAIL ***/
 	slog.Debug("CreateEmail: Evaluating Send MailItem", "Send", config.Send)
-	if config.SaveDraft {
+	if config.Send {
 		_, err = oleutil.CallMethod(message, "Send")
 		if err != nil {
 			slog.Error("CreateEmail: failed to CallMethod Send", "err", err)
-			return fmt.Errorf("save draft %v", err)
+			return fmt.Errorf("send %v", err)
 		}
 	}
 
