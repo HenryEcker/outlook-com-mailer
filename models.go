@@ -56,6 +56,7 @@ func (e EmailConfig) LogValue() slog.Value {
 		slog.Any("Recipients", e.Recipients),
 		slog.Any("Attachments", e.Attachments),
 		slog.Bool("SaveDraft", e.SaveDraft),
+		slog.Bool("Send", e.Send),
 		slog.Bool("Display", e.Display),
 	)
 }
