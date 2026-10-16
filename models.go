@@ -29,14 +29,6 @@ func (e EmailRecipient) LogValue() slog.Value {
 
 type EmailRecipients []EmailRecipient
 
-func (ers EmailRecipients) LogValue() slog.Value {
-	values := make([]slog.Value, len(ers))
-	for _, u := range ers {
-		values = append(values, u.LogValue())
-	}
-	return slog.AnyValue(values)
-}
-
 type EmailAttachments []string
 
 type EmailConfig struct {
